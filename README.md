@@ -1,4 +1,5 @@
 # React + Vite Starter Pack
+
 A minimal **React + Vite** starter template with TypeScript, ready for modern frontend development. Includes commonly used libraries to speed up your React project setup.
 
 ---
@@ -21,8 +22,8 @@ A minimal **React + Vite** starter template with TypeScript, ready for modern fr
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone https://github.com/Rahul122703/React-Vite-Tailwind-Starter.git
+cd React-Vite-Tailwind-Starter
 ```
 
 ### 2. Install dependencies

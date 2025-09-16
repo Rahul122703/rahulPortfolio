@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import Tilt from "react-parallax-tilt"; // Interactive tilt effect
+import Tilt from "react-parallax-tilt";
 import {
   SiMongodb,
   SiSqlite,
@@ -22,15 +22,26 @@ import {
   SiCplusplus,
   SiGit,
 } from "react-icons/si";
+import { ReactNode } from "react";
+
+interface SkillItem {
+  name: string;
+  icon: ReactNode;
+}
+
+interface SkillCategory {
+  category: string;
+  items: SkillItem[];
+}
 
 export default function About() {
-  const objectiveLines = [
+  const objectiveLines: string[] = [
     "Full-stack developer with multiple internship experiences, specializing in frontend and solid backend knowledge.",
     "Skilled at building responsive interfaces, APIs, databases, and web scraping.",
     "Freelancer available for hire — let's build your next project together! 🚀",
   ];
 
-  const skills = [
+  const skills: SkillCategory[] = [
     {
       category: "Databases",
       items: [
@@ -85,15 +96,14 @@ export default function About() {
   ];
 
   // Animation variants for categories
-  const categoryVariants = {
+  const categoryVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: (i) => ({
+    visible: (i: number = 0) => ({
       opacity: 1,
       y: 0,
       transition: { delay: i * 0.3, duration: 0.6, type: "spring" },
     }),
   };
-
   return (
     <section id="about" className="py-12 px-4 sm:px-8 md:px-16">
       {/* Section Title */}

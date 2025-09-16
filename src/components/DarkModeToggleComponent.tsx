@@ -8,7 +8,7 @@ interface UIState {
     darkMode: boolean;
   };
 }
-
+//adding comment
 const DarkModeToggleComponent: React.FC = () => {
   const dispatch = useDispatch();
   const darkMode = useSelector((state: UIState) => state.ui.darkMode);

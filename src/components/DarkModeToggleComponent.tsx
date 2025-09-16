@@ -22,7 +22,6 @@ const DarkModeToggleComponent: React.FC = () => {
       ) : (
         <FiMoon className="text-lg" />
       )}
-      <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
     </button>
   );
 };

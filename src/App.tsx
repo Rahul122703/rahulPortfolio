@@ -1,9 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useEffect } from "react";
-
-import { HomePage, AboutPage } from "./pages";
-import { NavbarComponent, FooterComponent } from "./components";
+import { useSelector } from "react-redux";
+import {
+  Navbar,
+  Hero,
+  About,
+  Projects,
+  Experience,
+  Education,
+  Achievements,
+  Certifications,
+  Contact,
+  Footer,
+} from "./components";
 
 interface UIState {
   ui: {
@@ -11,7 +19,7 @@ interface UIState {
   };
 }
 
-function App() {
+export default function App() {
   const darkMode = useSelector((state: UIState) => state.ui.darkMode);
 
   useEffect(() => {
@@ -23,25 +31,27 @@ function App() {
   }, [darkMode]);
 
   return (
-    <Router>
-      {/* Full-page flex container */}
-      <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 dark:text-white transition">
-        {/* Navbar */}
-        <NavbarComponent />
+    <div
+      className={`min-h-screen transition-colors duration-500 ${
+        darkMode ? "bg-[#06060A] text-slate-100" : "bg-slate-50 text-slate-900"
+      }`}>
+      {/* Navbar always on top */}
+      <Navbar />
 
-        {/* Main content area takes up remaining space */}
-        <main className="flex-1 flex flex-col">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-          </Routes>
-        </main>
+      {/* Main content */}
+      <main className="max-w-6xl mx-auto px-6">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Education />
+        <Achievements />
+        <Certifications />
+        <Contact />
+      </main>
 
-        {/* Footer at the bottom */}
-        <FooterComponent />
-      </div>
-    </Router>
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 }
-
-export default App;

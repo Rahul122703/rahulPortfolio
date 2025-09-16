@@ -11,25 +11,33 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: false,
-
       pwaAssets: {
         disabled: false,
         config: true,
       },
-
       manifest: {
         name: "react-tailwind-redux-starter",
         short_name: "react-redux-starter",
-        description: "No no need to setup Tailwind, Redux, and PWA",
+        description: "No need to setup Tailwind, Redux, and PWA",
         theme_color: "#ffffff",
+        icons: [
+          {
+            src: "/icons/icon-192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/icons/icon-512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
       },
-
       workbox: {
         globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
       },
-
       devOptions: {
         enabled: true,
         navigateFallback: "index.html",

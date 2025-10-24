@@ -6,4 +6,5 @@ export type Project = {
   features: string[];
   live?: string;
   github?: string;
+  images: string[];
 };

@@ -2,6 +2,22 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
+    id: "sharebro",
+    title: "ShareBro",
+    description:
+      "Secure document sharing platform with rooms, redux, and Prisma/SQLite backend.",
+    tech: ["Next.js", "Redux", "SQLite", "Prisma", "Socket.IO"],
+    features: ["Dashboard UI", "Room creation & chat", "JWT authentication"],
+    live: "https://sharebro.onrender.com",
+    github: "https://github.com/Rahul122703/sharesense",
+    images: [
+      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/ae2a95146ff5718720ff81cc46638d5e-1759569127127/Untitled%20design%20(1).png",
+      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/ae2a95146ff5718720ff81cc46638d5e-1759569150386/pc2-front.png",
+      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/ae2a95146ff5718720ff81cc46638d5e-1759569150368/pc3-front.png",
+      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/ae2a95146ff5718720ff81cc46638d5e-1759569150366/pc1-front.png",
+    ],
+  },
+  {
     id: "pollverse",
     title: "Pollverse",
     description:
@@ -45,7 +61,7 @@ export const projects: Project[] = [
     live: "https://rahulmart.netlify.app",
     github: "https://github.com/Rahul122703/rahulmart",
     images: [
-      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/4fe549abe3167812d3a551474951f03a-1759567588245/homepage-front.png",
+      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/d526ab2c2b32c1b3938c2925bf2354e6-1759567816033/Untitled%20design.png",
       "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/4fe549abe3167812d3a551474951f03a-1759567588245/homepage-front.png",
       "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/6246a91a3348173c9e386d945e44c2c6-1759567588232/Airtable-front.png",
       "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/d526ab2c2b32c1b3938c2925bf2354e6-1759567588244/productspage-front.png",
@@ -113,20 +129,4 @@ export const projects: Project[] = [
   //   features: ["Data extraction", "Excel output"],
   //   github: "https://github.com/Rahul122703/SIHscraping",
   // },
-  {
-    id: "sharebro",
-    title: "ShareBro",
-    description:
-      "Secure document sharing platform with rooms, redux, and Prisma/SQLite backend.",
-    tech: ["Next.js", "Redux", "SQLite", "Prisma", "Socket.IO"],
-    features: ["Dashboard UI", "Room creation & chat", "JWT authentication"],
-    live: "https://sharebro.onrender.com",
-    github: "https://github.com/Rahul122703/sharesense",
-    images: [
-      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/ae2a95146ff5718720ff81cc46638d5e-1759569127127/Untitled%20design%20(1).png",
-      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/ae2a95146ff5718720ff81cc46638d5e-1759569150386/pc2-front.png",
-      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/ae2a95146ff5718720ff81cc46638d5e-1759569150368/pc3-front.png",
-      "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/project_item/attachment/ae2a95146ff5718720ff81cc46638d5e-1759569150366/pc1-front.png",
-    ],
-  },
 ];

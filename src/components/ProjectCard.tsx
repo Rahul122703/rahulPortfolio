@@ -1,6 +1,8 @@
+"use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import GalleryModal from "./GalleryModal"; // import the fullscreen modal
 
 interface Project {
   id: string;
@@ -15,145 +17,84 @@ interface Project {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const [modalOpen, setModalOpen] = useState(false);
-  const [activeImage, setActiveImage] = useState(0);
 
   return (
-    <motion.article
-      whileHover={{ scale: 1.03 }}
-      className="glass p-4 md:p-6 rounded-2xl shadow-lg flex flex-col">
-      {/* Project Title & Tech */}
-      <header className="flex items-center justify-between mb-3">
-        <h3 className="text-lg md:text-xl font-semibold">{project.title}</h3>
-        <div className="flex flex-wrap gap-1">
-          {project.tech.map((t, i) => (
-            <span
-              key={i}
-              className="text-xs md:text-sm px-2 py-1 bg-white/10 dark:bg-black/20 rounded-full">
-              {t}
-            </span>
-          ))}
-        </div>
-      </header>
-
-      {/* Image Carousel */}
-      <div className="relative mb-3 cursor-pointer group">
-        <motion.img
-          src={project.images[activeImage]}
-          alt={project.title}
-          className="w-full h-48 md:h-56 object-cover rounded-lg shadow-md"
-          whileHover={{ scale: 1.05 }}
-          onClick={() => setModalOpen(true)}
-        />
-
-        {/* Carousel Controls */}
-        {project.images.length > 1 && (
-          <div className="absolute inset-0 flex justify-between items-center px-2 opacity-0 group-hover:opacity-100 transition">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setActiveImage(
-                  activeImage === 0
-                    ? project.images.length - 1
-                    : activeImage - 1
-                );
-              }}
-              className="bg-black/30 text-white rounded-full p-2 hover:bg-black/50">
-              ‹
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setActiveImage(
-                  activeImage === project.images.length - 1
-                    ? 0
-                    : activeImage + 1
-                );
-              }}
-              className="bg-black/30 text-white rounded-full p-2 hover:bg-black/50">
-              ›
-            </button>
+    <>
+      <motion.article
+        whileHover={{ scale: 1.03 }}
+        className="glass p-6 md:p-8 lg:p-10 rounded-3xl shadow-2xl flex flex-col bg-gradient-to-br from-white/20 dark:from-black/30 to-white/10 dark:to-black/20 backdrop-blur-lg transition-all">
+        {/* Title & Tech */}
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 gap-3">
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
+            {project.title}
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((t, i) => (
+              <span
+                key={i}
+                className="text-xs md:text-sm px-3 py-1 bg-white/20 dark:bg-black/30 text-white rounded-full font-medium">
+                {t}
+              </span>
+            ))}
           </div>
-        )}
-      </div>
+        </header>
 
-      {/* Description */}
-      <p className="text-slate-300 text-sm md:text-base mb-3">
-        {project.description}
-      </p>
-
-      {/* Features */}
-      <ul className="list-disc ml-5 text-xs md:text-sm mb-3 space-y-1">
-        {project.features.slice(0, 3).map((f, i) => (
-          <li key={i}>{f}</li>
-        ))}
-      </ul>
-
-      {/* Icon-only Links */}
-      <div className="flex gap-3 mt-auto">
-        {project.live && (
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={project.live}
-            className="p-3 bg-white/10 dark:bg-black/20 rounded-full flex items-center justify-center hover:bg-neon-violet/20 transition">
-            <FaExternalLinkAlt size={18} />
-          </a>
-        )}
-        {project.github && (
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={project.github}
-            className="p-3 bg-white/10 dark:bg-black/20 rounded-full flex items-center justify-center hover:bg-neon-violet/20 transition">
-            <FaGithub size={18} />
-          </a>
-        )}
-      </div>
-
-      {/* Modal for Images */}
-      {modalOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 flex justify-center items-center p-4"
-          onClick={() => setModalOpen(false)}>
-          <div className="relative w-full max-w-3xl">
-            <img
-              src={project.images[activeImage]}
+        {/* Single Preview Image */}
+        {project.images.length > 0 && (
+          <div className="relative mb-5 cursor-pointer group w-full rounded-2xl overflow-hidden shadow-lg">
+            <motion.img
+              src={project.images[0]}
               alt={project.title}
-              className="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
+              className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-2xl transition-transform duration-300"
+              whileHover={{ scale: 1.05 }}
+              onClick={() => setModalOpen(true)}
             />
-
-            {/* Carousel inside modal */}
-            {project.images.length > 1 && (
-              <>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveImage(
-                      activeImage === 0
-                        ? project.images.length - 1
-                        : activeImage - 1
-                    );
-                  }}
-                  className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black/30 text-white p-2 rounded-full hover:bg-black/50">
-                  ‹
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveImage(
-                      activeImage === project.images.length - 1
-                        ? 0
-                        : activeImage + 1
-                    );
-                  }}
-                  className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black/30 text-white p-2 rounded-full hover:bg-black/50">
-                  ›
-                </button>
-              </>
-            )}
           </div>
+        )}
+
+        {/* Description */}
+        <p className="text-base md:text-lg text-slate-700 dark:text-slate-300 mb-5">
+          {project.description}
+        </p>
+
+        {/* Features */}
+        <ul className="list-disc ml-5 text-sm md:text-base mb-6 space-y-1">
+          {project.features.map((f, i) => (
+            <li key={i}>{f}</li>
+          ))}
+        </ul>
+
+        {/* Links */}
+        <div className="flex gap-4 mt-auto">
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl shadow-md hover:scale-105 transition">
+              <FaExternalLinkAlt className="mr-2" /> Live Demo
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-xl shadow-md hover:scale-105 transition">
+              <FaGithub className="mr-2" /> GitHub
+            </a>
+          )}
         </div>
+      </motion.article>
+
+      {/* Fullscreen Gallery Modal */}
+      {modalOpen && (
+        <GalleryModal
+          images={project.images}
+          initialIndex={0}
+          onClose={() => setModalOpen(false)}
+        />
       )}
-    </motion.article>
+    </>
   );
 }

@@ -21,6 +21,8 @@ import {
   SiTypescript,
   SiCplusplus,
   SiGit,
+  SiHtml5,
+  SiCss3,
 } from "react-icons/si";
 import { ReactNode } from "react";
 
@@ -43,11 +45,10 @@ export default function About() {
 
   const skills: SkillCategory[] = [
     {
-      category: "Databases",
+      category: "Testing & Scraping",
       items: [
-        { name: "MongoDB", icon: <SiMongodb /> },
-        { name: "SQLite", icon: <SiSqlite /> },
-        { name: "Airtable", icon: <SiAirtable /> },
+        { name: "Selenium", icon: <SiSelenium /> },
+        { name: "BeautifulSoup", icon: <SiPython /> },
       ],
     },
     {
@@ -58,28 +59,21 @@ export default function About() {
         { name: "Vercel", icon: <SiVercel /> },
       ],
     },
-    {
-      category: "Testing & Scraping",
-      items: [
-        { name: "Selenium", icon: <SiSelenium /> },
-        { name: "BeautifulSoup", icon: <SiPython /> },
-      ],
-    },
-    {
-      category: "Frontend",
-      items: [
-        { name: "React.js", icon: <SiReact /> },
-        { name: "Next.js", icon: <SiNextdotjs /> },
-        { name: "TailwindCSS", icon: <SiTailwindcss /> },
-        { name: "Bootstrap", icon: <SiBootstrap /> },
-      ],
-    },
+
     {
       category: "Backend & APIs",
       items: [
         { name: "Flask", icon: <SiFlask /> },
         { name: "Express.js", icon: <SiExpress /> },
         { name: "Postman", icon: <SiPostman /> },
+      ],
+    },
+    {
+      category: "Databases",
+      items: [
+        { name: "MongoDB", icon: <SiMongodb /> },
+        { name: "SQLite", icon: <SiSqlite /> },
+        { name: "Airtable", icon: <SiAirtable /> },
       ],
     },
     {
@@ -93,6 +87,17 @@ export default function About() {
         { name: "Git", icon: <SiGit /> },
       ],
     },
+    {
+      category: "Frontend",
+      items: [
+        { name: "HTML5", icon: <SiHtml5 /> },
+        { name: "CSS3", icon: <SiCss3 /> },
+        { name: "React.js", icon: <SiReact /> },
+        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "TailwindCSS", icon: <SiTailwindcss /> },
+        { name: "Bootstrap", icon: <SiBootstrap /> },
+      ],
+    },
   ];
 
   // Animation variants for categories
@@ -104,6 +109,7 @@ export default function About() {
       transition: { delay: i * 0.3, duration: 0.6, type: "spring" },
     }),
   };
+
   return (
     <section id="about" className="py-12 px-4 sm:px-8 md:px-16">
       {/* Section Title */}

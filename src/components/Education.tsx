@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 // average sems calculation mentioned in the file. Using given CGPA (8.26) directly.
@@ -15,7 +14,7 @@ export default function Education() {
         <p className="font-semibold">
           B.E. Information Technology — Xavier Institute of Engineering
         </p>
-        <p className="text-sm opacity-80">CGPA: 8.26 (aggregate till sem 5)</p>
+        <p className="text-sm opacity-80">CGPA: 8.29 (aggregate till sem 6)</p>
       </div>
     </section>
   );

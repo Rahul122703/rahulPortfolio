@@ -8,8 +8,6 @@ import {
   Experience,
   Education,
   Achievements,
-  Certifications,
-  Contact,
   Footer,
 } from "./components";
 
@@ -46,8 +44,6 @@ export default function App() {
         <Projects />
         <Education />
         <Achievements />
-        <Certifications />
-        <Contact />
       </main>
 
       {/* Footer */}

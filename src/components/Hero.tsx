@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import me from "../assets/me.png";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 import GitHubCalendar from "react-github-calendar";
 
 export default function Hero() {
@@ -38,16 +38,18 @@ export default function Hero() {
           </motion.p>
 
           {/* Social Links */}
+          {/* ==== Right Avatar ==== */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.35 }}
-            className="flex justify-center md:justify-start gap-6 mt-6 text-2xl">
+            className="flex justify-center items-center md:justify-start gap-6 mt-6 text-2xl border border-none">
             <a
               href="mailto:rsharma122703@gmail.com"
               className="hover:text-neon-violet transition">
               <FaEnvelope />
             </a>
+
             <a
               href="https://github.com/rahul122703"
               target="_blank"
@@ -55,12 +57,21 @@ export default function Hero() {
               className="hover:text-neon-blue transition">
               <FaGithub />
             </a>
+
             <a
               href="https://www.linkedin.com/in/rahul122703/"
               target="_blank"
               rel="noreferrer"
               className="hover:text-neon-violet transition">
               <FaLinkedin />
+            </a>
+
+            <a
+              href="https://drive.google.com/uc?export=download&id=1MTpdlmD4y8nNXe5rfZIPJGDJEapJTHtN"
+              download="Rahul_Sharma_Resume.pdf"
+              className="flex items-center gap-2 px-4 py-2 text-base border border-neon-blue rounded-2xl hover:bg-neon-blue transition">
+              <FaDownload className="text-lg" />
+              <span>Resume</span>
             </a>
           </motion.div>
 
@@ -76,31 +87,7 @@ export default function Hero() {
               building responsive interfaces, APIs, and scalable apps.
             </p>
           </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-            <motion.a
-              whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px #8C4DFF" }}
-              whileTap={{ scale: 0.95 }}
-              href="#projects"
-              className="glass px-6 py-3 rounded-full font-medium text-slate-800 dark:text-slate-200 hover:text-neon-violet transition">
-              View Projects
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px #00F0FF" }}
-              whileTap={{ scale: 0.95 }}
-              href="mailto:rsharma122703@gmail.com"
-              className="glass px-6 py-3 rounded-full font-medium text-slate-800 dark:text-slate-200 hover:text-neon-blue transition">
-              Contact Me
-            </motion.a>
-          </motion.div>
         </div>
-
-        {/* ==== Right Avatar ==== */}
         <motion.div
           initial={{ x: 60, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}

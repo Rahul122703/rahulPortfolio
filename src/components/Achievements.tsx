@@ -23,41 +23,18 @@ export default function Achievements() {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         <motion.a
-          custom={0}
+          custom={3}
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
-          href="https://res.cloudinary.com/dle5gmw0f/image/upload/v1761327638/pollverseFirstPrice_vm0bny.png"
+          href="https://res.cloudinary.com/dle5gmw0f/image/upload/v1761327272/sprintNova4th_ttn8yl.jpg"
           target="_blank"
           rel="noreferrer"
           className="glass p-5 rounded-lg cursor-pointer hover:scale-[1.03] hover:shadow-lg transition-transform duration-300">
-          <p className="font-semibold text-lg">
-            🏆 PollVerse — Project Exhibition Winner
-          </p>
+          <p className="font-semibold text-lg">🥇 Hackathon Winner</p>
           <p className="text-sm mt-1 text-gray-700 dark:text-gray-300">
-            Won <strong>First Prize</strong> for PollVerse at the college-level
-            project exhibition.
-          </p>
-          <p className="text-xs mt-2 text-blue-500 underline">
-            View Certificate
-          </p>
-        </motion.a>
-
-        <motion.a
-          custom={1}
-          variants={fadeIn}
-          initial="hidden"
-          whileInView="visible"
-          href="https://res.cloudinary.com/dle5gmw0f/image/upload/v1761327638/pollverseFirstPrice_vm0bny.png"
-          target="_blank"
-          rel="noreferrer"
-          className="glass p-5 rounded-lg cursor-pointer hover:scale-[1.03] hover:shadow-lg transition-transform duration-300">
-          <p className="font-semibold text-lg">
-            🏅 ShareBro — Project Exhibition Winner
-          </p>
-          <p className="text-sm mt-1 text-gray-700 dark:text-gray-300">
-            Won <strong>First Prize</strong> for ShareBro at the college-level
-            project exhibition.
+            Won the <strong>Fourth Prize</strong> among 28 teams in a
+            college-level hackathon.
           </p>
           <p className="text-xs mt-2 text-blue-500 underline">
             View Certificate
@@ -84,18 +61,40 @@ export default function Achievements() {
         </motion.a>
 
         <motion.a
-          custom={3}
+          custom={1}
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
-          href="https://res.cloudinary.com/dle5gmw0f/image/upload/v1761327272/sprintNova4th_ttn8yl.jpg"
+          href="https://res.cloudinary.com/dle5gmw0f/image/upload/v1761327638/pollverseFirstPrice_vm0bny.png"
           target="_blank"
           rel="noreferrer"
           className="glass p-5 rounded-lg cursor-pointer hover:scale-[1.03] hover:shadow-lg transition-transform duration-300">
-          <p className="font-semibold text-lg">🥇 Hackathon Winner</p>
+          <p className="font-semibold text-lg">
+            🏅 ShareBro — Project Exhibition Winner
+          </p>
           <p className="text-sm mt-1 text-gray-700 dark:text-gray-300">
-            Won the <strong>Fourth Prize</strong> among 28 teams in a
-            college-level hackathon.
+            Won <strong>First Prize</strong> for ShareBro at the college-level
+            project exhibition.
+          </p>
+          <p className="text-xs mt-2 text-blue-500 underline">
+            View Certificate
+          </p>
+        </motion.a>
+        <motion.a
+          custom={0}
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          href="https://res.cloudinary.com/dle5gmw0f/image/upload/v1761327638/pollverseFirstPrice_vm0bny.png"
+          target="_blank"
+          rel="noreferrer"
+          className="glass p-5 rounded-lg cursor-pointer hover:scale-[1.03] hover:shadow-lg transition-transform duration-300">
+          <p className="font-semibold text-lg">
+            🏆 PollVerse — Project Exhibition Winner
+          </p>
+          <p className="text-sm mt-1 text-gray-700 dark:text-gray-300">
+            Won <strong>First Prize</strong> for PollVerse at the college-level
+            project exhibition.
           </p>
           <p className="text-xs mt-2 text-blue-500 underline">
             View Certificate

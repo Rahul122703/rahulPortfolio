@@ -30,14 +30,14 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-500 ${
+      className={`transition-colors duration-500 ${
         darkMode ? "bg-[#06060A] text-slate-100" : "bg-slate-50 text-slate-900"
       }`}>
       {/* Navbar always on top */}
       <Navbar />
 
       {/* Main content */}
-      <main className="max-w-6xl mx-auto px-6">
+      <main className="max-w-6xl mx-auto px-6 border border-none">
         <Hero />
         <About />
         <Experience />

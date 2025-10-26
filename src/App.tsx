@@ -11,7 +11,7 @@ import {
   Footer,
 } from "./components";
 
-import AnimatedCursor from "react-animated-cursor";
+// import AnimatedCursor from "react-animated-cursor";
 
 interface UIState {
   ui: {
@@ -36,7 +36,7 @@ export default function App() {
         darkMode ? "bg-[#06060A] text-slate-100" : "bg-slate-50 text-slate-900"
       }`}>
       {/* Animated Cursor */}
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={12}
         outerSize={40}
         color="0,255,100" // neon green RGB
@@ -53,7 +53,7 @@ export default function App() {
           backgroundColor: "#00FF64", // neon green inner dot
           boxShadow: "0 0 8px #00FF64", // subtle glow
         }}
-      />
+      /> */}
 
       {/* Navbar always on top */}
       <Navbar />

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 // average sems calculation mentioned in the file. Using given CGPA (8.26) directly.
 export default function Education() {
   return (
-    <section id="education" className="py-12">
+    <section id="education" className="py-12 px-4">
       <motion.h2
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

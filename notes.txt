@@ -1,3 +1,0 @@
-1. show icons on google index page 
-3. make the cards reponsive
-4. sliding issue of experience 

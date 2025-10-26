@@ -60,7 +60,7 @@ export default function App() {
 
       {/* Main content */}
       <Hero />
-      <main className="max-w-6xl mx-auto px-6 border border-none">
+      <main className="max-w-6xl mx-auto border border-none">
         <About />
         <Experience />
         <Projects />

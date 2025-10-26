@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import GalleryModal from "./GalleryModal"; // import the fullscreen modal
+import GalleryModal from "./GalleryModal";
 
 interface Project {
   id: string;
@@ -17,12 +17,24 @@ interface Project {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Auto-slide for multiple images
+  useEffect(() => {
+    if (project.images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % project.images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [project.images.length]);
 
   return (
     <>
       <motion.article
         whileHover={{ scale: 1.03 }}
-        className="glass p-6 md:p-8 lg:p-10 rounded-3xl shadow-2xl flex flex-col bg-gradient-to-br from-white/20 dark:from-black/30 to-white/10 dark:to-black/20 backdrop-blur-lg transition-all">
+        className="glass p-4 md:p-8 lg:p-10 rounded-3xl shadow-2xl flex flex-col bg-gradient-to-br from-white/20 dark:from-black/30 to-white/10 dark:to-black/20 backdrop-blur-lg transition-all">
         {/* Title & Tech */}
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 gap-3">
           <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
@@ -32,23 +44,30 @@ export default function ProjectCard({ project }: { project: Project }) {
             {project.tech.map((t, i) => (
               <span
                 key={i}
-                className="text-xs md:text-sm px-3 py-1 bg-white/20 dark:bg-black/30 text-white rounded-full font-medium">
+                className="text-xs md:text-sm px-3 py-1 bg-black/30 text-white rounded-full font-medium">
                 {t}
               </span>
             ))}
           </div>
         </header>
 
-        {/* Single Preview Image */}
+        {/* Image Preview / Auto-slide with smooth sliding */}
         {project.images.length > 0 && (
-          <div className="relative mb-5 cursor-pointer group w-full rounded-2xl overflow-hidden shadow-lg">
-            <motion.img
-              src={project.images[0]}
-              alt={project.title}
-              className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-2xl transition-transform duration-300"
-              whileHover={{ scale: 1.05 }}
-              onClick={() => setModalOpen(true)}
-            />
+          <div
+            className="relative mb-5 cursor-pointer group w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg"
+            onClick={() => setModalOpen(true)}>
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImage}
+                src={project.images[currentImage]}
+                alt={`${project.title} image ${currentImage + 1}`}
+                className="absolute w-full h-full object-cover rounded-2xl"
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -300, opacity: 0 }}
+                transition={{ duration: 0.8 }}
+              />
+            </AnimatePresence>
           </div>
         )}
 
@@ -91,7 +110,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       {modalOpen && (
         <GalleryModal
           images={project.images}
-          initialIndex={0}
+          initialIndex={currentImage}
           onClose={() => setModalOpen(false)}
         />
       )}

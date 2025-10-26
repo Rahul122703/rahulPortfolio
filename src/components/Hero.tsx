@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 import GitHubCalendar from "react-github-calendar";
+import { Typewriter } from "react-simple-typewriter";
 
 const VIDEO_CDN =
   "https://cdn.pixabay.com/video/2020/08/21/47802-451812879_large.mp4";
@@ -39,8 +40,22 @@ export default function Hero() {
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="mt-4 text-lg sm:text-xl text-slate-700 dark:text-slate-300">
-              Full-Stack Developer
+              className="mt-4 text-lg sm:text-xl text-slate-700 dark:text-slate-300 font-semibold">
+              <Typewriter
+                words={[
+                  "Full-Stack Developer",
+                  "Frontend Developer",
+                  "Backend Developer",
+                  "Selenium Tester",
+                  "Web Scraping",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}

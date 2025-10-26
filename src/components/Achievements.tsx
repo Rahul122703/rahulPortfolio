@@ -12,7 +12,7 @@ export default function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-12">
+    <section id="achievements" className="py-12 px-4">
       <motion.h2
         initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -27,51 +27,45 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-12 px-4 sm:px-8 md:px-16">
+    <section id="experience" className="py-24 px-4 sm:px-8 md:px-12 relative">
+      {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-bold mb-12 text-center md:text-left">
+        transition={{ duration: 0.7 }}
+        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-24 text-center text-neon-violet">
         Experience
       </motion.h2>
 
-      <div className="relative border-l-2 border-neon-violet/50 ml-4 md:ml-8">
+      {/* Timeline Line */}
+      <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-1 bg-neon-violet/30 h-full z-0"></div>
+
+      {/* Timeline Cards */}
+      <div className="relative z-10 space-y-32">
         {experiences.map((exp, i) => {
-          // Alternate slide direction
-          const slideFromLeft = i % 2 === 0;
+          const isLeft = i % 2 === 0;
 
           return (
             <motion.div
               key={i}
-              initial={{
-                opacity: 0,
-                x: slideFromLeft ? -100 : 100,
-                scale: 0.9,
-              }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{
-                duration: 0.7,
-                delay: i * 0.2,
-                type: "spring",
-                stiffness: 100,
-              }}
-              className="mb-12 pl-6 md:pl-10 relative flex justify-start md:justify-start">
-              {/* Circle on timeline */}
-              <div className="absolute -left-[10px] md:-left-6 top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-neon-violet shadow-lg" />
-
-              {/* Card */}
+              initial={{ opacity: 0, x: isLeft ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: i * 0.3 }}
+              className={`relative w-full flex ${
+                isLeft ? "justify-end" : "justify-start"
+              }`}>
+              {/* Experience Card */}
               <motion.div
-                whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #8C4DFF" }}
-                className={`glass p-4 md:p-6 rounded-xl shadow-lg bg-white/10 dark:bg-black/20 backdrop-blur-md w-full md:w-[85%]`}>
-                <h3 className="font-semibold text-lg md:text-xl">
-                  {exp.company} — {exp.role}
+                whileHover={{ scale: 1.05, boxShadow: "0px 0px 30px #8C4DFF" }}
+                className="glass bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-3xl p-8 lg:p-12 shadow-xl w-full max-w-2xl border border-neon-violet/30 hover:border-neon-violet transition-all duration-300">
+                <h3 className="text-2xl lg:text-3xl font-semibold text-neon-violet mb-2">
+                  {exp.role}
                 </h3>
-                <span className="text-sm md:text-base text-slate-500 dark:text-slate-300">
-                  {exp.duration}
+                <span className="block text-base lg:text-lg text-slate-400 dark:text-slate-300 mb-5">
+                  {exp.company} — {exp.duration}
                 </span>
-                <ul className="mt-2 list-disc ml-5 text-sm md:text-base text-slate-700 dark:text-slate-200 space-y-1">
+                <ul className="list-disc ml-5 space-y-2 text-slate-700 dark:text-slate-200">
                   {exp.points.map((point, idx) => (
                     <li key={idx}>{point}</li>
                   ))}

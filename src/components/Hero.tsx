@@ -27,7 +27,7 @@ export default function Hero() {
       <div className="max-w-[900px] w-full mx-auto border border-none flex flex-col ">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* ==== Left Content ==== */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left border border-none">
             <motion.h1
               initial={{ y: -40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -85,8 +85,8 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
-              className="mt-6 glass p-4 rounded-xl shadow-lg max-w-lg mx-auto md:mx-0">
-              <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200">
+              className="mt-6 glass p-4 rounded-xl shadow-lg max-w-full mx-auto md:mx-0  border border-none">
+              <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200  border border-none">
                 Full-stack developer with multiple internship experiences,
                 specializing in frontend and solid backend knowledge. Skilled at
                 building responsive interfaces, APIs, and scalable apps.

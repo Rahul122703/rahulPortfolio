@@ -28,7 +28,7 @@ export default function Navbar() {
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 120, damping: 15 }}
-        className="sticky top-4 z-50 mx-auto max-w-6xl px-6 hidden md:block">
+        className="fixed top-0 left-1/2 -translate-x-1/2 z-50 max-w-6xl w-full px-6 hidden md:block">
         <nav className="glass flex items-center justify-between p-4 rounded-2xl shadow-xl backdrop-blur-lg border border-white/10 dark:border-white/20">
           {/* Logo / Name */}
           <motion.a

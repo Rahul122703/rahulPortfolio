@@ -11,6 +11,8 @@ import {
   Footer,
 } from "./components";
 
+import CustomCursor from "./components/CustomCursor";
+
 interface UIState {
   ui: {
     darkMode: boolean;
@@ -33,12 +35,13 @@ export default function App() {
       className={`transition-colors duration-500 ${
         darkMode ? "bg-[#06060A] text-slate-100" : "bg-slate-50 text-slate-900"
       }`}>
+      <CustomCursor />
       {/* Navbar always on top */}
       <Navbar />
 
       {/* Main content */}
+      <Hero />
       <main className="max-w-6xl mx-auto px-6 border border-none">
-        <Hero />
         <About />
         <Experience />
         <Projects />

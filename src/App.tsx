@@ -37,14 +37,22 @@ export default function App() {
       }`}>
       {/* Animated Cursor */}
       <AnimatedCursor
-        innerSize={10}
-        outerSize={20}
-        color="140,77,255" // RGB for neon purple
-        outerAlpha={0.2}
-        innerScale={0.7}
-        outerScale={5}
-        trailingSpeed={8}
+        innerSize={12}
+        outerSize={40}
+        color="0,255,100" // neon green RGB
+        outerAlpha={0.3}
+        innerScale={0.8}
+        outerScale={2.5}
+        trailingSpeed={12}
         clickables={["a", "button", ".link"]}
+        outerStyle={{
+          border: "2px solid #00FF64", // neon green border
+          boxShadow: "0 0 15px #00FF64", // glowing effect
+        }}
+        innerStyle={{
+          backgroundColor: "#00FF64", // neon green inner dot
+          boxShadow: "0 0 8px #00FF64", // subtle glow
+        }}
       />
 
       {/* Navbar always on top */}

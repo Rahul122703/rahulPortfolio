@@ -29,13 +29,9 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 px-4 sm:px-8 md:px-12 relative">
       {/* Section Title */}
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-24 text-center text-neon-violet">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-24 text-center text-neon-violet">
         Experience
-      </motion.h2>
+      </h2>
 
       {/* Timeline Line */}
       <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-1 bg-neon-violet/30 h-full z-0"></div>
@@ -46,12 +42,8 @@ export default function Experience() {
           const isLeft = i % 2 === 0;
 
           return (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, x: isLeft ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: i * 0.3 }}
               className={`relative w-full flex ${
                 isLeft ? "justify-end" : "justify-start"
               }`}>
@@ -71,7 +63,7 @@ export default function Experience() {
                   ))}
                 </ul>
               </motion.div>
-            </motion.div>
+            </div>
           );
         })}
       </div>

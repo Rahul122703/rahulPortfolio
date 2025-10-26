@@ -27,3 +27,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
 }
+
+/* Hover Green Glow */
+.hover\:shadow-green:hover {
+  box-shadow: 0 0 20px #1dbf73, 8px 8px 16px rgba(0, 128, 64, 0.2),
+    -8px -8px 16px rgba(255, 255, 255, 0.7);
+}

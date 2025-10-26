@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 import GitHubCalendar from "react-github-calendar";
@@ -10,8 +12,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex flex-col justify-center py-16 px-6 sm:px-12 overflow-hidden border border-none mt-4">
-      {/* ==== Background Video ==== */}
+      className="relative min-h-[90vh] flex flex-col justify-center py-16 px-6 sm:px-12 overflow-hidden">
+      {/* Background Video */}
       <video
         autoPlay
         loop
@@ -21,14 +23,14 @@ export default function Hero() {
         <source src={VIDEO_CDN} type="video/mp4" />
       </video>
 
-      {/* ==== Overlay (for readability) ==== */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white/80 dark:from-black/60 dark:via-black/40 dark:to-black/80"></div>
 
-      {/* ==== Content Wrapper ==== */}
-      <div className="max-w-[900px] w-full mx-auto border border-none flex flex-col ">
+      {/* Content Wrapper */}
+      <div className="max-w-[1000px] w-full mx-auto flex flex-col mt-4">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* ==== Left Content ==== */}
-          <div className="text-center md:text-left border border-none">
+          {/* Left Content */}
+          <div className="text-center md:text-left">
             <motion.h1
               initial={{ y: -40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -36,6 +38,7 @@ export default function Hero() {
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-black dark:text-white">
               Rahul Sharma
             </motion.h1>
+
             <motion.p
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -49,7 +52,7 @@ export default function Hero() {
                   "Selenium Tester",
                   "Web Scraping",
                 ]}
-                loop={true}
+                loop
                 cursor
                 cursorStyle="|"
                 typeSpeed={70}
@@ -57,6 +60,7 @@ export default function Hero() {
                 delaySpeed={1500}
               />
             </motion.p>
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -64,11 +68,12 @@ export default function Hero() {
               className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 italic">
               “Turning ideas into interactive experiences 🚀”
             </motion.p>
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.35 }}
-              className="flex justify-center items-center md:justify-start gap-6 mt-6 text-2xl border border-none">
+              className="flex justify-center items-center md:justify-start gap-6 mt-6 text-2xl">
               <a
                 href="mailto:rsharma122703@gmail.com"
                 className="hover:text-neon-violet transition">
@@ -96,20 +101,59 @@ export default function Hero() {
                 <span>Resume</span>
               </a>
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
-              className="mt-6 glass p-4 rounded-xl shadow-lg max-w-full mx-auto md:mx-0  border border-none">
-              <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200  border border-none">
+              className="mt-6 glass p-4 rounded-xl shadow-lg max-w-full mx-auto md:mx-0">
+              <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200">
                 Full-stack developer with multiple internship experiences,
                 specializing in frontend and solid backend knowledge. Skilled at
                 building responsive interfaces, APIs, and scalable apps.
               </p>
             </motion.div>
           </div>
+
+          {/* Right Content: Fiverr Freelancer Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, type: "spring", stiffness: 120 }}
+            className="flex flex-col items-center justify-center p-8 bg-green-200/30 backdrop-blur-lg dark:bg-green-900/30 rounded-3xl
+             shadow-neumorph text-center border border-transparent transform transition-all duration-300
+             hover:shadow-green hover:-translate-y-2 hover:scale-105">
+            <h2 className="text-3xl sm:text-4xl font-bold text-green-900 dark:text-green-300 mb-5">
+              Hire Me as Your Freelancer!
+            </h2>
+
+            <p className="text-lg sm:text-xl text-green-800 dark:text-green-200 mb-6">
+              <Typewriter
+                words={[
+                  "I am available for freelance projects.",
+                  "Let's build something amazing together 🚀",
+                ]}
+                loop
+                cursor
+                cursorStyle="|"
+                typeSpeed={60}
+                deleteSpeed={40}
+                delaySpeed={1500}
+              />
+            </p>
+
+            <a
+              href="https://www.fiverr.com/rahul122703"
+              target="_blank"
+              rel="noreferrer"
+              className="px-8 py-3 bg-green-400/60 dark:bg-green-600/60 text-green-900 dark:text-white font-semibold rounded-xl
+               backdrop-blur-sm border border-green-300/50 hover:bg-green-500/80 hover:border-green-400 transition-all duration-300">
+              Visit My Fiverr
+            </a>
+          </motion.div>
         </div>
-        {/* ==== GitHub Section ==== */}
+
+        {/* GitHub Section */}
         <div className="relative z-10 mt-16 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -127,6 +171,7 @@ export default function Hero() {
               fontSize={12}
             />
           </motion.div>
+
           <div className="grid md:grid-cols-2 gap-6 mt-10">
             <motion.img
               initial={{ opacity: 0, scale: 0.95 }}

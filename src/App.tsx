@@ -61,11 +61,11 @@ export default function App() {
       {/* Main content */}
       <Hero />
       <main className="max-w-6xl mx-auto border border-none">
-        <About />
-        <Experience />
-        <Projects />
-        <Education />
         <Achievements />
+        <Projects />
+        <Experience />
+        <About />
+        <Education />
       </main>
 
       {/* Footer */}

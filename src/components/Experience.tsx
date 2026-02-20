@@ -23,6 +23,17 @@ const experiences = [
       "Delivered client-focused solutions with CI/CD integration for quality, usability, and timely deployment.",
     ],
   },
+  {
+    role: "Software Development Intern",
+    company: "WildWestJ Fords",
+    duration: "January 2026 – June ",
+    points: [
+      "Built and optimized production-level frontend features using React, ensuring scalable UI.",
+      "Integrated high-performance Fast APIs into the frontend application.",
+      "Implemented data caching and performance optimization techniques to improve application speed.",
+      "Maintained clean, reusable code and collaborated using Git-based workflows.",
+    ],
+  },
 ];
 
 export default function Experience() {
@@ -46,11 +57,13 @@ export default function Experience() {
               key={i}
               className={`relative w-full flex ${
                 isLeft ? "justify-end" : "justify-start"
-              }`}>
+              }`}
+            >
               {/* Experience Card */}
               <motion.div
                 whileHover={{ scale: 1.05, boxShadow: "0px 0px 30px #8C4DFF" }}
-                className="glass bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-3xl p-8 lg:p-12 shadow-xl w-full max-w-2xl border border-neon-violet/30 hover:border-neon-violet transition-all duration-300">
+                className="glass bg-white/10 dark:bg-black/20 backdrop-blur-md rounded-3xl p-8 lg:p-12 shadow-xl w-full max-w-2xl border border-neon-violet/30 hover:border-neon-violet transition-all duration-300"
+              >
                 <h3 className="text-2xl lg:text-3xl font-semibold text-neon-violet mb-2">
                   {exp.role}
                 </h3>

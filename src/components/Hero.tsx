@@ -94,11 +94,11 @@ export default function Hero() {
                 <FaLinkedin />
               </a>
               <a
-                href="https://drive.google.com/file/d/18sLE3-hF6rJXElREoXoXoM-3XBalvwwP/view?usp=sharing"
+                href="https://drive.google.com/file/d/1nkFRGwLyPVnxIwyyLaAjNwnuoy3vQXUc/view?usp=sharing"
                 download="Rahul_Sharma_Resume.pdf"
                 className="flex items-center gap-2 px-4 py-2 text-base border border-neon-blue rounded-2xl hover:bg-neon-blue transition">
                 <FaDownload className="text-lg" />
-                <span>Resume</span>
+                <span>Download Resume</span>
               </a>
             </motion.div>
 

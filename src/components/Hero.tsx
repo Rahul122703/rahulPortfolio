@@ -96,6 +96,7 @@ export default function Hero() {
               <a
                 href="https://drive.google.com/file/d/1nkFRGwLyPVnxIwyyLaAjNwnuoy3vQXUc/view?usp=sharing"
                 download="Rahul_Sharma_Resume.pdf"
+                target="_blank"
                 className="flex items-center gap-2 px-4 py-2 text-base border border-neon-blue rounded-2xl hover:bg-neon-blue transition">
                 <FaDownload className="text-lg" />
                 <span>Download Resume</span>

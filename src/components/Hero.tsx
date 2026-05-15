@@ -76,6 +76,7 @@ export default function Hero() {
               className="flex justify-center items-center md:justify-start gap-6 mt-6 text-2xl">
               <a
                 href="mailto:rsharma122703@gmail.com"
+                target="_blank"
                 className="hover:text-neon-violet transition">
                 <FaEnvelope />
               </a>

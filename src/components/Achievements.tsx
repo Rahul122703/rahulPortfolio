@@ -112,8 +112,8 @@ export default function Achievements() {
           className="glass p-5 rounded-lg cursor-pointer hover:scale-[1.03] hover:shadow-lg transition-transform duration-300">
           <p className="font-semibold text-lg">⌨️ Touch Typing Excellence</p>
           <p className="text-sm mt-1 text-gray-700 dark:text-gray-300">
-            Ranked among the <strong>Top 11.76%</strong> globally on Monkeytype
-            (15s category).
+            Ranked among the <strong>Top 5%</strong> globally on Monkeytype
+            (60 seconds category).
           </p>
           <p className="text-xs mt-2 text-blue-500 underline">View Profile</p>
         </motion.a>

@@ -26,7 +26,7 @@ const experiences = [
   {
     role: "Software Development Intern",
     company: "WildWestJ Fords",
-    duration: "January 2026 – June ",
+    duration: "January 2026 – May 2026 ",
     points: [
       "Built and optimized production-level frontend features using React, ensuring scalable UI.",
       "Integrated high-performance Fast APIs into the frontend application.",

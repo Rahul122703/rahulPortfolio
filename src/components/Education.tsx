@@ -14,7 +14,7 @@ export default function Education() {
         <p className="font-semibold">
           B.E. Information Technology — Xavier Institute of Engineering
         </p>
-        <p className="text-sm opacity-80">CGPA: 8.29 (aggregate till sem 6)</p>
+        <p className="text-sm opacity-80">CGPA: 8.34)</p>
       </div>
     </section>
   );

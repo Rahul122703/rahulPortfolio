@@ -12,9 +12,9 @@ export default function Education() {
       </motion.h2>
       <div className="glass p-4 rounded-lg">
         <p className="font-semibold">
-          B.E. Information Technology — Xavier Institute of Engineering
+          Bachelor of Engineering (Information Technology) — Xavier Institute of Engineering , Mumbai
         </p>
-        <p className="text-sm opacity-80">CGPA: 8.34)</p>
+        <p className="text-sm opacity-80">CGPA: 8.34</p>
       </div>
     </section>
   );

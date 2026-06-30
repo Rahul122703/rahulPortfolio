@@ -10,7 +10,7 @@ const VIDEO_CDN =
   "https://cdn.pixabay.com/video/2020/08/21/47802-451812879_large.mp4";
 
 const RESUME_DRIVE_LINK =
-  "https://drive.google.com/file/d/1UAYOUVedF5KiNK40C9emu_BGN12P6zPx/view?usp=drivesdk";
+  "https://drive.google.com/file/d/11OfO90D7tHJNBKdaquDm04WBQ20xOfRW/view?usp=drive_link";
 
 export default function Hero() {
   const [showGithubStats, setShowGithubStats] = useState(true);
